@@ -1,19 +1,19 @@
 import React from 'react';
 import Flat from './flat';
 
-const Flatlist = ({ flats }) => {
+const Flatlist = ({ flats, onFlatSelect }) => {
   const renderedFlats = flats.map((flat) => {
     return (
-      <div>
-        <Flat flat={flat}  key={flat.name}/>
-      </div>
+      <Flat
+        flat={flat}
+        key={flat.name}
+        onFlatSelect={onFlatSelect}
+      />
     );
   });
 
   return (
-    <div>
-      {renderedFlats}
-    </div>
+    [renderedFlats]
   );
 };
 
